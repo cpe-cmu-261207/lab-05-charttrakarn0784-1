@@ -76,7 +76,7 @@ function saveTodo() {
     data.push(todoObj);
   }
   //your code here
-  // console.log(data);
+  data.reverse();
   const dataStr = JSON.stringify(data);
   localStorage.setItem("todoListData", dataStr);
 }
@@ -85,10 +85,8 @@ function loadTodo() {
   //your code here
   const dataStr = localStorage.getItem("todoListData");
   const data = JSON.parse(dataStr);
-  console.log(data);
   for (const todoObj of data) {
-    // addTodo(todoObj.title, todoObj.completed);
-    console.log(todoObj);
+    addTodo(todoObj.title, todoObj.completed);
   }
 }
 
